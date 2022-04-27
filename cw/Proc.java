@@ -7,7 +7,6 @@ public class Proc {
     public Proc(String s){
 
     }
-    public static void main(String[] args) {
-    }
+
 }
 
