@@ -1,0 +1,6 @@
+public class main {
+    String s = "Foo";
+    Proc p = new Proc(s);
+
+   
+}
