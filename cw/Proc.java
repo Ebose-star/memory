@@ -6,7 +6,11 @@ public class Proc {
     LinkedList<Integer> linkedList;
     public Proc(String s){
         this.id = Integer.parseInt(s.split(",")[0]);
-        
+        for (int i = 1; i < s.split(",").length; i++){
+			linkedList.add(Integer.parseInt(s.split(",")[i]));
+			s = s.replaceAll("\\s+","");
+				//System.out.print(Integer.parseInt(s.split(",")[i]));
+		}
     }
     public LinkedList<Integer>[] parseInputString (String s){
 		int numberOfElementsInTheString;
@@ -43,11 +47,10 @@ public class Proc {
 			index++;
 		}
 		for (int i =0; i<numberOfElementsInTheString; i++){
-            
-        
     
     }
-        return comp;}
+        return comp;
+	}
 
 public String toString(){
     String s=( " " + this.id);
