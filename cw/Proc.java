@@ -1,27 +1,26 @@
 package cw;
-//import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Proc {
     int id;
-    LinkedList<Integer> memorySegment;
-    
+    LinkedList<Integer> linkedList;
     public Proc(String s){
+        this.id = Integer.parseInt(s.split(",")[0]);
+        
     }
     public LinkedList<Integer>[] parseInputString (String s){
-		
-		int id, index;
+		int numberOfElementsInTheString;
+		int size, index;
 		LinkedList<Integer>[] comp;
 		
 		//number of components to look at, first being the pid
-		id = s.split(",").length;
+		numberOfElementsInTheString = s.split(",").length;
 		
 		//process id, followed by segments and their arguments
-		comp = new LinkedList[id];
+		comp = new LinkedList[this.id];
 		
 		//init all
-		for (int i =0; i<id; i++){
+		for (int i =0; i<this.id; i++){
 			comp[i] = new LinkedList<Integer>();
 		}
 
@@ -43,22 +42,17 @@ public class Proc {
 			}
 			index++;
 		}
-		//for (int i =0; i<id; i++){
-            System.out.println("dog");
-
-        return comp;
+		for (int i =0; i<numberOfElementsInTheString; i++){
+            
+        
+    
     }
+        return comp;}
 
 public String toString(){
-    String output="";
-    Iterator<Integer> iterator=memorySegment.iterator();
-      while(iterator.hasNext()){
-         //System.out.println(iterator.next()+" ");
-  output=("ProcessId:"+ this.id + iterator.next()+" " );
-}
- return output;
+    String s=( " " + this.id);
+ return s;
  
-}    
-    }
+}    }
 
 
