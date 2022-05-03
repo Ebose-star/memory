@@ -4,12 +4,14 @@ import java.util.LinkedList;
 public class Proc {
     int id;
     LinkedList<Integer> linkedList;
+
     public Proc(String s){
+		linkedList =new LinkedList<Integer>();
         this.id = Integer.parseInt(s.split(",")[0]);
         for (int i = 1; i < s.split(",").length; i++){
-			linkedList.add(Integer.parseInt(s.split(",")[i]));
-			s = s.replaceAll("\\s+","");
-				//System.out.print(Integer.parseInt(s.split(",")[i]));
+		      s = s.replaceAll("\\s+","");
+		     linkedList.add(Integer.parseInt(s.split(",")[i]));
+            //System.out.print(Integer.parseInt(s.split(",")[i])+" ");
 		}
     }
     public LinkedList<Integer>[] parseInputString (String s){
@@ -46,16 +48,37 @@ public class Proc {
 			}
 			index++;
 		}
-		for (int i =0; i<numberOfElementsInTheString; i++){
+		for (int i =0; i < numberOfElementsInTheString; i++){
     
     }
         return comp;
 	}
 
+	
+public int getID(){
+	return id;
+
+}	
+
+public LinkedList<Integer> getLinkedList() {
+	return linkedList;
+}
+
+
 public String toString(){
-    String s=( " " + this.id);
- return s;
+   // String s=( this.id + " " );
+String accumulator = "";
+
+accumulator = accumulator + this.id;
+for (int i = 0; i < linkedList.size(); i++) {
+	System.out.print(linkedList.get(i) + " ");
+	//System.out.print(Integer.parseInt(s.split(",")[i])+" ");
+
+
+}
+ return accumulator;
  
-}    }
+}
+}
 
 
