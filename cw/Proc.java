@@ -55,7 +55,7 @@ public class Proc {
 	}
 
 	
-public int getID(){
+public int getId(){
 	return id;
 
 }	
@@ -66,15 +66,14 @@ public LinkedList<Integer> getLinkedList() {
 
 
 public String toString(){
-   // String s=( this.id + " " );
+   //String s=( this.id + " " );
 String accumulator = "";
 
 accumulator = accumulator + this.id;
+System.out.print(accumulator + " ");
 for (int i = 0; i < linkedList.size(); i++) {
-	System.out.print(linkedList.get(i) + " ");
+	System.out.print(linkedList.get(i)+ " ");
 	//System.out.print(Integer.parseInt(s.split(",")[i])+" ");
-
-
 }
  return accumulator;
  
