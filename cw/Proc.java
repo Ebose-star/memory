@@ -14,7 +14,10 @@ public class Proc {
             //System.out.print(Integer.parseInt(s.split(",")[i])+" ");
 		}
 } 
-	
+	public int getElementFromListById(int N){
+		return linkedList.get(N);
+		
+	}
 public int getId(){
 	return id;
 
@@ -35,38 +38,4 @@ public String toString(){
 	}
 }
 
-class Node 
-{ 
-    int data; 
-    Node next; 
-    Node(int d) 
-    { 
-        data = d; 
-        next = null; 
-    } 
-} 
-class j 
-{ 
-    Node head; //the head of list 
-  
-    /* Takes index as argument and return data at index*/
-	public int getElementFromListById(int N){    { 
-        Node current = head; 
-        int count = 0; /* index of Node we are 
-                          currently looking at */
-        while (current != null) 
-        { 
-            if (count == N) 
-                return current.data; 
-            count++; 
-            current = current.next; 
-        } 
-  
-        /* if we get to this line, the caller was asking 
-        for a non-existent element so we assert fail */
-        assert(false); 
-        return 0; 
-    } 
-	}
-}
-
+ 

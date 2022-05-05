@@ -1,23 +1,26 @@
 package cw;
 
 public class Memory {
-    private int total_size;
-	
+    private int os_size;
+	 private int hole; 
 	/**
 	 * Main Memory Constructor 
-	 * @param size is total memory size 
+	 * @param i
+	 * @param os_size is total memory size 
 	 */
-	public Memory(int size) {
-		this.total_size = size;
+	public Memory(int os_size, int hole) {
+		this.os_size = os_size;
+		this.hole= hole;
 	}
-	
-	/**
-	 * Method for the total size of the Main Memory
-	 * @param none 
-	 * @return actual size if it has been defined
-	 * @return -1 if not defined
-	 */
-	public int getTotalSize() {
-		return total_size;
+
+	 public static void main(String[] args) {
+		Memory m = new Memory(124, 1024);
+		System.out.print(m.toString());
+ }
+	public String toString(){
+		String output=" ";
+		output = "[OS " + this.os_size + "] " + " Hole: " +this.hole;
+		return output;
+
 	}	
 }
