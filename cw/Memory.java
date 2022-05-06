@@ -12,11 +12,6 @@ public class Memory {
 		this.os_size = os_size;
 		this.hole= hole;
 	}
-
-	 public static void main(String[] args) {
-		Memory m = new Memory(124, 1024);
-		System.out.print(m.toString());
- }
 	public String toString(){
 		String output=" ";
 		output = "[OS " + this.os_size + "] " + " Hole: " +this.hole;
