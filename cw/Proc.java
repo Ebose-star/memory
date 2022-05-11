@@ -3,19 +3,24 @@ import java.util.LinkedList;
 
 public class Proc {
     int id;
-    LinkedList<Integer> linkedList;
+    //LinkedList<Integer> linkedList;
+	LinkedList<Segment>listOfSegments;
+
 
     public Proc(String s){
-		linkedList =new LinkedList<Integer>();
+		listOfSegments =new LinkedList<Segment>();
         this.id = Integer.parseInt(s.split(",")[0]);
         for (int i = 1; i < s.split(",").length; i++){
 		      s = s.replaceAll("\\s+","");
-		     linkedList.add(Integer.parseInt(s.split(",")[i]));
+			  Segment f =new Segment(Integer.parseInt(s.split(",")[i]), this.id, i);
+			  listOfSegments.add(f);
+			  
             //System.out.print(Integer.parseInt(s.split(",")[i])+" ");
 		}
+		
 } 
-	public int getElementFromListById(int N){
-		return linkedList.get(N);
+	public Segment getElementFromListById(int N){
+		return listOfSegments.get(N);
 		
 	}
 public int getId(){
@@ -23,19 +28,21 @@ public int getId(){
 
 }	
 
-public LinkedList<Integer> getLinkedList() {
-	return linkedList;
+public LinkedList<Segment> getListOfSegments() {
+	return listOfSegments;
 }
 
 
 public String toString(){
 	String accumulator = "";
 	accumulator = accumulator + "ID: " +this.id + " Memory segments: ";
-	for (int i = 0; i < linkedList.size(); i++) {
-	accumulator = accumulator + linkedList.get(i)+ " ";
+	for (int i = 0; i < listOfSegments.size(); i++) {
+	accumulator = accumulator + "SegmentID: "+ listOfSegments.get(i).getSegmentID()+ " size: "+  listOfSegments.get(i).getSize()+ " ";
 	}
 	return accumulator;
 	}
+
 }
+
 
  
