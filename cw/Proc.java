@@ -1,13 +1,15 @@
 package cw;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Proc {
     int id;
     //LinkedList<Integer> linkedList;
 	LinkedList<Segment>listOfSegments;
-
+HashMap<Segment,Boolean> f ;
 
     public Proc(String s){
+		f = new HashMap<Segment, Boolean>();
 		listOfSegments =new LinkedList<Segment>();
         this.id = Integer.parseInt(s.split(",")[0]);
         for (int i = 1; i < s.split(",").length; i++){
@@ -23,6 +25,11 @@ public class Proc {
 		return listOfSegments.get(N);
 		
 	}
+public boolean removeElementFromListById(int N){
+	return f.remove( N, true);
+
+}
+
 public int getId(){
 	return id;
 

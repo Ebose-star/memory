@@ -16,7 +16,7 @@ public class MyApp {
  System.out.println("Add to Main Memory the Process "+ p.toString());
  m.addProcess (p); // or some variant of this form to all Segments of P1 in main memory.
 // System.out.println(m.getHole());
-System.out.println(m.toString());
+System.out.println(m.toString()); 
 
     }
 
