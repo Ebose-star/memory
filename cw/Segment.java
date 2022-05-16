@@ -30,4 +30,9 @@ public void setLoadedToMemory(boolean load){
 this.loadedToMemory = load;
 }
 
+@Override
+public String toString() {
+  return "Segment " + getSegmentID() + ": Proc ID=" + getProcID() + " Is Loaded In Memory=" + getloadedToMemory();
+}
+
 }

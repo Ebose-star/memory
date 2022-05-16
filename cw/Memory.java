@@ -18,7 +18,7 @@ public class Memory {
 		this.listOfSegments=listOfSegments;
 	}
 	public String toString(){
-int hole=totalSize;
+		int hole=this.totalSize;
 		String output=" ";
 		output = "[OS " + os_size + "] ";
 		for (Segment s : listOfSegments) {
@@ -41,24 +41,32 @@ int hole=totalSize;
 	  Segment s =p.getElementFromListById(segment);
 	  if(!s.getloadedToMemory()){
 		totalSize = totalSize - s.getSize();
+		s.setLoadedToMemory(true);
 		listOfSegments.add(s);
 		p.f.put(s, true);
-s.setLoadedToMemory(true);
 	  }}
     
 	public void addProcess(Proc p){
 for(int i =0; i< p.listOfSegments.size(); i++){
 	Segment segment = p.getElementFromListById(i);
 	totalSize = totalSize - segment.getSize();
+// if((this.toString().contains("P" + p.getId() + "S" + p.getListOfSegments().get(i).getSegmentID()))){
+// 	this.removeSegment(segment.getSegmentID(), p);
+// }
+// else{
+// 	totalSize = totalSize - segment.getSize();
 
-	if(!segment.getloadedToMemory()){
-	// System.out.println(segment);
+	
+
+	if(segment.getloadedToMemory()==false){
+	System.out.println(segment);
 	this.listOfSegments.add(segment);
 	segment.setLoadedToMemory(true);
-}}
+}
 
+}
 	}
-	public void removeSegment(int segment, Proc p){
+ void removeSegment(int segment, Proc p){
 		Segment s =p.getElementFromListById(segment);
 
 	if(s.getloadedToMemory()== true){
